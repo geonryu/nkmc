@@ -12,9 +12,9 @@ export default function Heading(props: any) {
     }
 
     return(
-        <Title className={`text-${textAlign}`}>
+        <Title className={`text-${textAlign} pb-3`}>
             <Label className="fs-6 mb-1 fw-bold text-point">{props.labelTxt}</Label>
-            <Txt className="fs-4 fw-bold">{props.titTxt1}{props.titTxt2 !== "" ? <br className="d-block d-md-none"/> : ""}{props.titTxt2}</Txt>
+            <Txt className={`text-${props.theme} fs-4 fw-bold`}>{props.titTxt1}{props.titTxt2 !== "" ? <br className="d-block d-md-none"/> : ""}{props.titTxt2}</Txt>
         </Title>
     )
 }

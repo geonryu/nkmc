@@ -31,7 +31,7 @@ export default function Product() {
                             Check out Namkwang's wind power products
                         </div>
                         <div className="d-none d-md-block">
-                            <DefaultButton content={"Explorer"} className/>
+                            <DefaultButton content={"Explorer"} type={"to"} theme={"light"} to={"/company/about"} />
                         </div>
                     </Col>
                     <Col xs={12} md={6} lg={8}>
@@ -73,7 +73,7 @@ export default function Product() {
                         </Products>
                     </Col>
                     <div className="text-center d-block d-md-none">
-                        <DefaultButton content={"Explorer"} className/>
+                        <DefaultButton content={"Explorer"} type={"to"} theme={"light"} to={"/company/about"} />
                     </div>
                 </Row>
             </Container>

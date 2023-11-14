@@ -65,7 +65,7 @@ export default function Navigation(props: any) {
         {
             title : {en: "COMPANY", ko: "회사소개", key: "nav1",}, 
             sub : [
-                {subtitle: "About Us", to: "/", key: "nav1-1", ko: "회사소개",},
+                {subtitle: "About Us", to: "/company/about", key: "nav1-1", ko: "회사소개",},
                 {subtitle: "History", to: "/", key: "nav1-2", ko: "회사연혁",},
                 {subtitle: "Location", to: "/", key: "nav1-3", ko: "오시는 길",},
             ]
@@ -78,14 +78,14 @@ export default function Navigation(props: any) {
             ]
         },
         {
-            title : {en: "BOARD", ko: "공지사항", key: "nav3",}, 
+            title : {en: "BOARD", ko: "게시판", key: "nav3",}, 
             sub : [
-                {subtitle: "News", to: "/", key: "nav3-1", ko: "새소식",},
-                {subtitle: "Notice", to: "/", key: "nav3-2", ko: "공지사항",},
+                {subtitle: "Notice", to: "/", key: "nav3-1", ko: "공지사항",},
+                {subtitle: "Download", to: "/", key: "nav3-2", ko: "게시판",},
             ]
         },
         {
-            title : {en: "Contact", ko: "문의하기", key: "nav4",}, 
+            title : {en: "CONTACT", ko: "문의하기", key: "nav4",}, 
             sub : [
                 {subtitle: "Contact", to: "/", key: "nav4-1", ko: "문의하기",},
                 {subtitle: "Online Shop", to: "/", key: "nav4-2", ko: "온라인샵",},

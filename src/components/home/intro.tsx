@@ -49,7 +49,7 @@ export default function Intro() {
                 <Wrap className="py-5">
                     <div className="my-5">
                         <Heading data-aos={"fade-right"} data-aos-duration={200}labelTxt={"About Us"} titTxt1={`A Global Leader For`} titTxt2={" Yaw & Rotor Brake"} txtAlign={"left"}/>
-                        <Content className="mt-3">
+                        <Content>
                             <Col xs={12} sm={10} md={7} lg={5}>
                                 <Txt data-aos={"fade-right"} data-aos-duration={200}>
                                     <div className="en mb-2 fw-bold fs-5 z-1">
@@ -59,7 +59,7 @@ export default function Intro() {
                                         남광전기는 50년 이상된 clutch, brake 기술의 풍부한 경험과 노하우를 바탕으로 친환경에너지 전문기업으로 나가기 위해 노력하겠습니다.
                                     </div> */}
                                 </Txt>
-                                <DefaultButton content={"Get To Know Us"} />
+                                <DefaultButton content={"Get To Know Us"} type={"to"} theme={"light"} to={"/company/about"} />
                             </Col>
                         </Content>
                     </div>
