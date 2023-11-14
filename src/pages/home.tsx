@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import MainVisual from "../home/mainVisual";
-import Intro from "../home/intro";
-import Product from "../home/product";
-import Contact from "../home/contact";
-import Parteners from "../home/parteners";
+import MainVisual from "../components/home/mainVisual";
+import Intro from "../components/home/intro";
+import Product from "../components/home/product";
+import Contact from "../components/home/contact";
+import Parteners from "../components/home/parteners";
 
 const Wrapper = styled.div`
 `;

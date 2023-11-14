@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Col, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styled from "styled-components"
 
@@ -11,6 +11,9 @@ const GlobalNavigation = styled.nav`
     @media (min-width: 1200px) {
         position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 0; z-index: 99999; width: unset;
 
+        &.extend{
+            left: 50%;
+        }
         & .container{
             height: 100%;
         }
@@ -18,6 +21,12 @@ const GlobalNavigation = styled.nav`
 `;
 const GNB = styled.ul`
     padding: 0;
+    & > li > .sub div a .subko{font-size: 14px; position: relative; overflow: hidden;}
+    & > li > .sub div a .subko::before{content: '';display: block; width: 4px; height: 4px; background-color: #8fc63f; border-radius: 50%; transition: all 0.3s; position: absolute; top: 50%; left: 0; transform: translate(-4px, -50%);}
+    & > li > .sub div:hover a .subko::before{transform: translate(0px, -50%);}
+    & > li > .sub div a .subko span{transition: transform 0.2s; display: block;}
+    & > li > .sub div:hover a .subko span{transform: translateX(6px);}
+
     @media (min-width: 1200px) {
         height: 100%; border: 0 !important;
 
@@ -27,9 +36,11 @@ const GNB = styled.ul`
         & > li > div .en{font-size: 1.25rem !important; width: 100%;}
         & > li:hover{border-bottom: 2px solid #8FC63F !important;}
         & > li > .sub{display: none;}
-        & > li > .sub div{border: 0; height: 42px; display: flex; align-items: center; width: 100%;}
+        & > li > .sub div{border: 0; display: flex; align-items: center; width: 100%;}
         & > li > .sub div a{font-size: 1rem !important; width: 100%;}
         & > li > .sub div a:hover{color: #8FC63F !important;}
+        & > li > .sub div a .subko{font-size: 11px; position: relative; overflow: hidden;}
+
     }
 `;
 const Navi = styled.li`
@@ -40,41 +51,44 @@ const Navi = styled.li`
 const Ref = styled.div``;
 const SubNavi = styled.div`
     display: none;
+    overflow: hidden;
+    transition: all 0.2s
+    transition-delay: 0.02s;
 `;
 const Arrow = styled.svg`
     height: 25px; transform: rotate(180deg);
 `;
 
-export default function Navigation(props) {
+export default function Navigation(props: any) {
     
     const siteMap = [
         {
             title : {en: "COMPANY", ko: "회사소개", key: "nav1",}, 
             sub : [
-                {subtitle: "About Us", to: "/", key: "nav1-1",},
-                {subtitle: "History", to: "/", key: "nav1-2",},
-                {subtitle: "Location", to: "/", key: "nav1-3",},
+                {subtitle: "About Us", to: "/", key: "nav1-1", ko: "회사소개",},
+                {subtitle: "History", to: "/", key: "nav1-2", ko: "회사연혁",},
+                {subtitle: "Location", to: "/", key: "nav1-3", ko: "오시는 길",},
             ]
         },
         {
             title : {en: "PRODUCT", ko: "제품", key: "nav2",}, 
             sub : [
-                {subtitle: "Clutch & Brake", to: "/", key: "nav2-1",},
-                {subtitle: "Wind Power", to: "/", key: "nav2-2",},
+                {subtitle: "Clutch & Brake", to: "/", key: "nav2-1", ko: "클러치&브레이크",},
+                {subtitle: "Wind Power", to: "/", key: "nav2-2", ko: "풍력발전",},
             ]
         },
         {
-            title : {en: "News & Notice", ko: "공지사항", key: "nav3",}, 
+            title : {en: "BOARD", ko: "공지사항", key: "nav3",}, 
             sub : [
-                {subtitle: "News", to: "/", key: "nav3-1",},
-                {subtitle: "Notice", to: "/", key: "nav3-2",},
+                {subtitle: "News", to: "/", key: "nav3-1", ko: "새소식",},
+                {subtitle: "Notice", to: "/", key: "nav3-2", ko: "공지사항",},
             ]
         },
         {
-            title : {en: "Contact Us", ko: "문의하기", key: "nav4",}, 
+            title : {en: "Contact", ko: "문의하기", key: "nav4",}, 
             sub : [
-                {subtitle: "Contact", to: "/", key: "nav4-1",},
-                {subtitle: "Online Shop", to: "/", key: "nav4-2",},
+                {subtitle: "Contact", to: "/", key: "nav4-1", ko: "문의하기",},
+                {subtitle: "Online Shop", to: "/", key: "nav4-2", ko: "온라인샵",},
             ]
         },
     ];
@@ -82,18 +96,18 @@ export default function Navigation(props) {
     const [isClick, setIsClick] = useState(false);
     const [extendSub, setExtendSub] = useState("notExtend");
 
-    const onClick = (e) => {
+    const onClick = (e: React.MouseEvent<HTMLLIElement>) => {
         const idx = e.currentTarget.getAttribute("data-idx");
-        setExtendSub(idx);
+        setExtendSub(String(idx));
     }
-    const onMouseEnter = (e) => {
+    const onMouseEnter = () => {
         props.headerStatus(true);
         setExtendSub("extend");
     } 
 
     useEffect(() => {
         props.navStatus !== "" ? setIsClick(true) : setIsClick(false);
-        props.navStatus === "" ? setIsClick(false) : setExtendSub(null);
+        props.navStatus === "" ? setIsClick(false) : setExtendSub("notExtend");
     }, [props.navStatus])
     return (
         <GlobalNavigation className={isClick ? "extend" : ""} onMouseEnter={onMouseEnter}>
@@ -115,10 +129,16 @@ export default function Navigation(props) {
                                         </div>
                                     </button>
                                 </Ref>
-                                <SubNavi className={`sub ${Number(extendSub) === i || extendSub === "extend" ? "d-block" : "d-none"}`} style={{height: extendSub === "extend" ? "126px" : 0}}>
-                                    {list.sub.map((item, j) => {
+                                {/* style={{height: extendSub === "extend" ? "126px" : 0}} */}
+                                <SubNavi className={`sub ${Number(extendSub) === i ? "d-block" : "d-none"}`} >
+                                    {list.sub.map((item) => {
                                         return (
-                                            <div key={item.key} className="sub-item"><Link to={item.to} className="d-block fs-3 fw-bold text-gray-800 px-3 px-xl-0 py-2">{item.subtitle}</Link></div>
+                                            <div key={item.key} className="sub-item">
+                                                <Link to={item.to} className="d-block fs-3 fw-bold text-gray-800 px-3 px-xl-0 py-2">
+                                                    <div className="subko text-gray-500"><span>{item.ko}</span></div>
+                                                    <div>{item.subtitle}</div>
+                                                </Link>
+                                            </div>
                                         )//second return
                                     })}
                                 </SubNavi>

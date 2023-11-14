@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Col, Container, Nav } from "react-bootstrap";
+import { Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styled from "styled-components"
 import Navigation from "./nav";
@@ -10,14 +10,19 @@ const Div = styled.div`
     }
 `;
 const Header = styled.header`
-    height: 65px; position: fixed; top: 0; left: 0; width: 100%; z-index: 99999;
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 99999; transition: all 0.4s; height: 66px;
+    
+    & > .container {height: 65px;}
     @media (min-width: 1200px) {
+        overflow: hidden;
+
+        &.extend{height: 260px}
         & .sub{
             display: block !important;
             height: unset;
         }
         &::after{
-            content: '';
+            // content: '';
             display: block;
             width: 100%;
             height: 0;
@@ -31,7 +36,7 @@ const Header = styled.header`
             // border-bottom: 1px solid #dee2e6;
             height: 200px;
         }
-    }
+s    }
 `;
 const HeaderWrap = styled.div`
     z-index: 20;
@@ -69,8 +74,8 @@ export default function GlobalHeader() {
         setHeaderStatus(false);
     }
     return (
-        <Header onMouseLeave={onMouseLeave} className={`bg-white ${headerStatus ? "extend" : ""} border-bottom`}>
-            <Container className="h-100 position-relative">
+        <Header onMouseLeave={onMouseLeave} className={`bg-white ${headerStatus || navBtn === "active" ? "extend" : ""} border-bottom d-flex align-itmes-lg-start`}>
+            <Container className="position-relative">
                 <HeaderWrap className="bg-white bg-lg-none h-100 d-flex justify-content-between align-items-center position-relative">
                     <Col xs={5} md={3} lg={2} className="h-100">
                         <Logo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo-mono.svg?alt=media&token=c83fdf9d-969e-4306-b855-06d8f8e997e9" alt="" /></Link></Logo>

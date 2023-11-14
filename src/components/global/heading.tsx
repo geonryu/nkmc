@@ -5,7 +5,7 @@ const Title = styled.div``;
 const Label = styled.div``;
 const Txt = styled.div``;
 
-export default function Heading(props) {
+export default function Heading(props: any) {
     const [textAlign, setTextAlign] = useState("left");
     if(textAlign !== props.txtAlign) {
         setTextAlign(props.txtAlign);

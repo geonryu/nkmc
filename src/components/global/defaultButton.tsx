@@ -10,7 +10,7 @@ const PillButton = styled.button`
     }
 `;
 
-export default function DefaultButton(props) {
+export default function DefaultButton(props: any) {
     return (
         <PillButton className="rounded-pill py-2 px-5 mt-3 fw-bold">{props.content}</PillButton>
     )

@@ -2,8 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import { useState } from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
-import Layout from './components/layout';
-import Home from './components/pages/home';
+import Company from './pages/company/about';
+import Home from './pages/home';
+import Layout from './routes/layout';
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,15 @@ const router = createBrowserRouter([
             {
                 path:"", 
                 element: <Home />
+            },
+            {
+                path: "/company",
+                children: [
+                    {
+                        path: "/company/about",
+                        element: <Company />
+                    }
+                ]
             }
         ]
     },

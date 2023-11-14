@@ -1,14 +1,12 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade, FreeMode, Pagination, Thumbs } from "swiper/modules";
+import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import 'swiper/css/effect-fade';
-import { useState } from "react";
-import { Container } from "react-bootstrap";
 
 const Section = styled.section``;
 const VisualSlider = styled.div`
@@ -27,10 +25,8 @@ const Slide = styled.div`
     background-size: cover;
 `;
 const VisualTit = styled.h2`width: 100%;`;
-const VisualTxt = styled.div``;
 
 export default function MainVisual() {
-    // const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     return(
         <Section className="py-5">
@@ -51,14 +47,20 @@ export default function MainVisual() {
                     >
                         <SwiperSlide>
                             <Slide>
-                                <img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmain-visual-m1.jpg?alt=media&token=4e3a5f5c-0eb0-409b-9cf6-fe94914f57cb" alt="" className="d-block d-lg-none w-100" />
-                                <img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmain-visual1.jpg?alt=media&token=04898aaa-e65f-4589-a47a-7d09bc1e2704" alt="" className="d-none d-lg-block w-100" />
+                                <img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmainvisual2m.jpg?alt=media&token=ce446a52-b0d6-461b-a241-a18a3de1a6ea" alt="" className="d-block d-lg-none w-100" />
+                                <img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmainvisual2.jpg?alt=media&token=5dc27ad0-b261-483c-b01e-8f0e7453243f" alt="" className="d-none d-lg-block w-100" />
                             </Slide>
                         </SwiperSlide>
                         <SwiperSlide>
                             <Slide>
-                                <img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmain-visual-m2.jpg?alt=media&token=edf82d49-9d5f-466e-9eb2-3e50dcc9e436" alt="" className="d-block d-lg-none w-100" />
-                                <img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmain-visual2.jpg?alt=media&token=f64090c5-3b7e-4e5c-b1b1-859668131914" alt="" className="d-none d-lg-block w-100" />
+                                <img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmainvisual1m.jpg?alt=media&token=507be5b0-b5b8-4291-a9e8-fa16f6c66e14" alt="" className="d-block d-lg-none w-100" />
+                                <img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmainvisual1.jpg?alt=media&token=13f379ec-4589-45af-aa64-e61b12f964be" alt="" className="d-none d-lg-block w-100" />
+                            </Slide>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Slide>
+                                <img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmainvisual3m.jpg?alt=media&token=779ed2e3-fb54-4b45-8019-a23498d1ee1f" alt="" className="d-block d-lg-none w-100" />
+                                <img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmainvisual3.jpg?alt=media&token=d732c356-c92f-40eb-8b36-b5ae19e0c527" alt="" className="d-none d-lg-block w-100" />
                             </Slide>
                         </SwiperSlide>
                     </Swiper>

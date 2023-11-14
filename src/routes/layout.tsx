@@ -1,8 +1,7 @@
 import styled from "styled-components"
-import GlobalHeader from "./global/header";
+import GlobalHeader from "../components/global/header";
 import { Outlet } from "react-router-dom";
-import GlobalFooter from "./global/footer";
-import { useState } from "react";
+import GlobalFooter from "../components/global/footer";
 
 const Wrapper = styled.div`
     max-width: 1920px; margin: 0 auto;

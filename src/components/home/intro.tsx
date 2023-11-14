@@ -2,6 +2,9 @@ import { Col, Container } from "react-bootstrap";
 import styled from "styled-components";
 import Heading from "../global/heading";
 import DefaultButton from "../global/defaultButton";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const Section = styled.section`
     
@@ -36,16 +39,19 @@ const Txt = styled.div`
 `;
 
 export default function Intro() {
+    useEffect(() => {
+        AOS.init();
+    }, [])
 
     return(
         <Section>
             <Container> 
                 <Wrap className="py-5">
                     <div className="my-5">
-                        <Heading labelTxt={"About Us"} titTxt1={`A Global Leader For`} titTxt2={" Yaw & Rotor Brake"} txtAlign={"left"}/>
+                        <Heading data-aos={"fade-right"} data-aos-duration={200}labelTxt={"About Us"} titTxt1={`A Global Leader For`} titTxt2={" Yaw & Rotor Brake"} txtAlign={"left"}/>
                         <Content className="mt-3">
                             <Col xs={12} sm={10} md={7} lg={5}>
-                                <Txt>
+                                <Txt data-aos={"fade-right"} data-aos-duration={200}>
                                     <div className="en mb-2 fw-bold fs-5 z-1">
                                         We will strive to become an <span><b className="fw-bold">eco-friendly</b></span> energy company based on the abundant experience and know-how of clutch and brake technology over <span><b className="fw-bold">50 years ago.</b></span>
                                     </div>
