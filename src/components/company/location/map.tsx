@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { Col, Container, Row } from "react-bootstrap";
 import Heading from "../../global/heading";
+import { Col, Container, Row } from "react-bootstrap";
 import { useEffect } from "react";
 
 const Section = styled.section``;
@@ -9,20 +9,37 @@ const MapView = styled.div`
     height: 420px;
 `;
 
+const {kakao} = window;
+declare global {
+    interface Window {
+      kakao: any;
+    }
+}
+console.log(kakao)
 export default function MapKakao() {
-    useEffect(()=> {
-        new daum.roughmap.Lander({
-            "timestamp" : "1699974077422",
-            "key" : "2gthh",
-        }).render();
-    }, [])
+    useEffect(() => {
+        let container = document.getElementById('map');
+        let options = {
+            center: new kakao.maps.LatLng(35.0872593026274, 128.966785535675),
+            level: 3
+        };
 
+        const map = new kakao.maps.Map(container, options);
+
+        let markerPosition = options.center;
+        let marker = new kakao.maps.Marker({
+            "position" : markerPosition
+        });
+        
+        marker.setMap(map);
+      }, []);
+    
     return (
         <Section className="py-5">
             <Container>
                 <Heading labelTxt={"Location"} titTxt1={`오시는 길`} titTxt2={""} txtAlign={"center"}/>
-                <Col xs={12}>
-                    <MapView id="daumRoughmapContainer1699974077422" className="root_daum_roughmap root_daum_roughmap_landing"></MapView>
+                <Col xs={12} className="mb-3">
+                    <MapView id="map" className="root_daum_roughmap root_daum_roughmap_landing w-100 rounded" style={{width: "300px", height: "420px"}}></MapView>
                 </Col>
                 
                 <Row>
