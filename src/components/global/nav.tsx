@@ -67,7 +67,7 @@ export default function Navigation(props: any) {
             sub : [
                 {subtitle: "About Us", to: "/company/about", key: "nav1-1", ko: "회사소개",},
                 {subtitle: "History", to: "/", key: "nav1-2", ko: "회사연혁",},
-                {subtitle: "Location", to: "/", key: "nav1-3", ko: "오시는 길",},
+                {subtitle: "Location", to: "/company/location", key: "nav1-3", ko: "오시는 길",},
             ]
         },
         {
