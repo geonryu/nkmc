@@ -55,7 +55,7 @@ export default function Product() {
                             >
                                 <SwiperSlide>
                                     <Slide data-aos={"fade-up"} data-aos-duration={200}>
-                                        <div><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmain-visual-m1.jpg?alt=media&token=4e3a5f5c-0eb0-409b-9cf6-fe94914f57cb" alt="" className="d-block w-100" /></div>
+                                        <div><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmainvisual1m.jpg?alt=media&token=507be5b0-b5b8-4291-a9e8-fa16f6c66e14" alt="" className="d-block w-100" /></div>
                                         <div>
                                             <div className="fw-bold text-center mt-3">Clutch Brake</div>
                                         </div>
@@ -63,7 +63,7 @@ export default function Product() {
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <Slide data-aos={"fade-up"} data-aos-duration={200} data-aos-delay={100}>
-                                        <div><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmain-visual-m2.jpg?alt=media&token=edf82d49-9d5f-466e-9eb2-3e50dcc9e436" alt="" className="d-block w-100" /></div>
+                                        <div><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmainvisual2m.jpg?alt=media&token=ce446a52-b0d6-461b-a241-a18a3de1a6ea" alt="" className="d-block w-100" /></div>
                                         <div>
                                             <div className="fw-bold text-center mt-3">Wind Turbine Products</div>
                                         </div>
