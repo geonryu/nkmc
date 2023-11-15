@@ -78,7 +78,7 @@ export default function GlobalHeader() {
             <Container className="position-relative">
                 <HeaderWrap className="bg-white bg-lg-none h-100 d-flex justify-content-between align-items-center position-relative">
                     <Col xs={5} md={3} lg={2} className="h-100">
-                        <Logo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo-mono.svg?alt=media&token=c83fdf9d-969e-4306-b855-06d8f8e997e9" alt="" /></Link></Logo>
+                        <Logo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo-re-dft.svg?alt=media&token=8e24f669-b3b0-4d6c-8d2b-e14c7a6dc3fc" alt="남광전기" /></Link></Logo>
                     </Col>
                     <Div className="btn-menu-opn">
                         <BtnNavOpen onClick={onClickNavBtn} className={navBtn}>

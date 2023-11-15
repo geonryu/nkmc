@@ -23,7 +23,7 @@ export default function Intro() {
                         </div>
                     </Col>
                     <Col sm={12} md={6}>
-                        <img className="rounded" src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fvision.jpg?alt=media&token=c3146596-5be4-43c0-bf29-55004dbd0b04" />
+                        <img className="rounded" src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmainvisual1.jpg?alt=media&token=13f379ec-4589-45af-aa64-e61b12f964be" />
                     </Col>
                 </Row>
                 <Row className="align-items-center flex-column-reverse flex-md-row-reverse">

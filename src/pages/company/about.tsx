@@ -27,7 +27,7 @@ export default function Company() {
                 context2={"시장을 이끄는 글로벌 리더"}
                 ></LNB>
             <LocalNavVisual 
-                imgSrc={"https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmain-visual1.jpg?alt=media&token=04898aaa-e65f-4589-a47a-7d09bc1e2704"}
+                imgSrc={"https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmainvisual1.jpg?alt=media&token=13f379ec-4589-45af-aa64-e61b12f964be"}
                 altText={"회사소개"}
             ></LocalNavVisual>
             <Intro></Intro>

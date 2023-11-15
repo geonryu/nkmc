@@ -66,7 +66,7 @@ export default function MoreInformation() {
                     </Col>
                     <Col xs={12} md={4} className="box mb-3 mb-md-0">
                         <Quick className="quick2 p-3 p-md-3 p-lg-4 p-xl-5 bg-gray-100 rounded">
-                            <Heading labelTxt={"Factory Location"} titTxt1={`오시는 길`} titTxt2={""} txtAlign={"left"} theme={""} className={"mb-5"}/>
+                            <Heading labelTxt={"Location"} titTxt1={`오시는 길`} titTxt2={""} txtAlign={"left"} theme={""} className={"mb-5"}/>
                             <div className="fs-6 d-flex justify-content-end justify-content-md-start">
                                 <DefaultButton content={"Learn More"} type={"to"} theme={"light"} to={"/company/about"} />
                             </div>

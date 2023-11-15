@@ -37,10 +37,10 @@ export default function GlobalFooter() {
                 <FooterWrap className="bg-white">
                     <Row>
                         <Col xs={4} md={3} lg={2} className="h-100 mx-auto mx-md-0">
-                            <FLogo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo-mono.svg?alt=media&token=c83fdf9d-969e-4306-b855-06d8f8e997e9" alt="" /></Link></FLogo>
+                            <FLogo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo-re-dft.svg?alt=media&token=8e24f669-b3b0-4d6c-8d2b-e14c7a6dc3fc" alt="남광전기" /></Link></FLogo>
                         </Col>
                         <Col xs={12} md={9} lg={"auto"} className="mt-2 ms-lg-auto">
-                            <Address>Address :　19, Eulsukdo-daero 569beon-gil, Saha-gu, Busan, <br className="d-none d-sm-block d-md-none"/>Republic of Korea</Address>
+                            <Address>19, Eulsukdo-daero 569beon-gil, Saha-gu, Busan, <br className="d-none d-sm-block d-md-none"/>Republic of Korea</Address>
                             <FMenu className="p-0 d-flex justify-content-center justify-content-md-start">
                                 <li className="fw-bold me-3 me-md-5">Tel. +82(0)51-201-3600</li>
                                 <li className="fw-bold ">Fax +82(0)51-201-3604</li>
