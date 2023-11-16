@@ -1,13 +1,13 @@
 import styled from "styled-components";
+import MileStone from "../../components/company/history/milestone";
+import Performance from "../../components/company/history/performance";
 import LNB from "../../components/global/localNav";
 import LocalNavVisual from "../../components/global/localNavVisual";
-import MapKakao from "../../components/company/location/map";
-import VariousContact from "../../components/company/location/variousContact";
 
 const Wrapper = styled.div`
 `;
 
-export default function Location() {
+export default function CompanyHistory() {
     return(
         <Wrapper>
             <LNB
@@ -17,19 +17,19 @@ export default function Location() {
                         to: "/company/about",
                     },
                     {
-                        tit: "Location",
-                        to: "/company/location"
+                        tit: "Our History",
+                        to: "/company/companyHistory"
                     }
                 ]}
-                context1={"오시는 길"}
-                context2={""}
+                context1={"남광전기가"}
+                context2={"걸어온 길"}
                 ></LNB>
             <LocalNavVisual 
                 imgSrc={"https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Fmainvisual1.jpg?alt=media&token=13f379ec-4589-45af-aa64-e61b12f964be"}
-                altText={"회사소개"}
+                altText={"회사연혁"}
             ></LocalNavVisual>
-            <MapKakao></MapKakao>
-            <VariousContact></VariousContact>
+            <MileStone></MileStone>
+            <Performance></Performance>
         </Wrapper>
     )
 }
