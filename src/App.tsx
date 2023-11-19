@@ -17,9 +17,9 @@ import Admin from './components/admin/admin';
 import AdminProduct from './components/admin/admProduct';
 import AdminNotice from './components/admin/admNotice';
 import AdminLibrary from './components/admin/admLibrary';
-import ProtectedRoute from './components/admin/protected-route';
 import Login from './components/admin/login';
 import BoardContent from './components/board/boardContent';
+import ProtectedRoute from './components/admin/protected-route';
 
 const router = createBrowserRouter([
     {

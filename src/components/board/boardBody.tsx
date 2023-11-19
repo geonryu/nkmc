@@ -57,8 +57,8 @@ export default function BoardBody(props: any) {
                 // limit(5)
             );
     
-            unsubscribe = await onSnapshot(boardQuery, (snapshot) => {
-                const boardData = snapshot.docs.map((doc) => {
+            unsubscribe = await onSnapshot(boardQuery, (snapshot:any) => {
+                const boardData = snapshot.docs.map((doc:any) => {
                     const { id, createdAt, tit, content, attached1, attached1Name, attached2, attached2Name, attached3, attached3Name, attached4, attached4Name } = doc.data()
                     return {
                         id, createdAt, tit, content, attached1, attached1Name, attached2, attached2Name, attached3, attached3Name, attached4, attached4Name
@@ -78,11 +78,11 @@ export default function BoardBody(props: any) {
         <Section className="py-5">
             <Container>
                 <Heading labelTxt={`${props.category === "notice" ? "Notice" : "Download"}`} titTxt1={`${props.category === "notice" ? "공지사항" : "자료실"}`} titTxt2={""} txtAlign={"center"}/>
-                <Table className="col-12 col-md-10 mx-auto border-top border-bottom">
+                <Table className="col-12 border-top border-bottom">
                     <Thead className="border-bottom border-2 border-black">
                         <Th className="p-2 d-flex">
                             <Td className="me-3 col-3 col-md-2">
-                                <div className="px-2">Date</div >
+                                <div className="px-2">Date</div>
                             </Td>
                             <Td className="col-10">
                                 <div className="px-2">Content</div >
@@ -93,7 +93,7 @@ export default function BoardBody(props: any) {
                         {boardList.map((item) => {
                             const crtAt = new Date(item.createdAt);
                             return (
-                                <Tr onClick={() => onClick(item)} className="border-bottom" key={item.id} data-ref={item.id}>
+                                <Tr onClick={() => onClick(item)} className="border-bottom py-2" key={item.id} data-ref={item.id}>
                                     <button className="d-flex w-100 align-items-center">
                                         <Td className="me-3 col-3 col-md-2 p-2">
                                             <div className="date rounded-4 p-1 d-flex flex-wrap justify-content-center text-center bg-gray-100 text-gray-600">

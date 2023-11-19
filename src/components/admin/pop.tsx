@@ -20,7 +20,6 @@ const Popup = styled.div`
 `;
 
 export default function Pop(props: any) {
-
     const { type, category, printData } = props;
     const [tit, setTit] = useState("");
     const [content, setContent] = useState("");
