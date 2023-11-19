@@ -51,9 +51,13 @@ const Next = styled.div`
     top: 20px;
     z-index: 9999;
 `;
-
+declare global {
+    interface thumbsSwiper {
+        destroyed: any;
+    }
+}
 export default function MileStone() {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
     return(
         <Section className="py-5">
@@ -106,8 +110,8 @@ export default function MileStone() {
                     </Swiper>
                 </Milestone>
                 <TxtSlider>
-                    <Prev className="col-2"><button className="d-flex align-items-center justify-content-center p-2 rounded-circle mx-auto text-gray-600 fw-bold prevBtn"><span class="material-symbols-outlined">arrow_back</span></button></Prev>
-                    <Next className="col-2"><button className="d-flex align-items-center justify-content-center p-2 rounded-circle mx-auto text-gray-600 fw-bold nextBtn"><span class="material-symbols-outlined">arrow_forward</span></button></Next>
+                    <Prev className="col-2"><button className="d-flex align-items-center justify-content-center p-2 rounded-circle mx-auto text-gray-600 fw-bold prevBtn"><span className="material-symbols-outlined">arrow_back</span></button></Prev>
+                    <Next className="col-2"><button className="d-flex align-items-center justify-content-center p-2 rounded-circle mx-auto text-gray-600 fw-bold nextBtn"><span className="material-symbols-outlined">arrow_forward</span></button></Next>
                     <Swiper
                         onSwiper={setThumbsSwiper}
                         loop={true}

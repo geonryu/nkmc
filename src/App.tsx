@@ -7,6 +7,19 @@ import CompanyHistory from './pages/company/companyHistory';
 import Location from './pages/company/location';
 import Home from './pages/home';
 import Layout from './routes/layout';
+import WindPower from './pages/product/windpower';
+import Notice from './pages/board/notice';
+import Download from './pages/board/download';
+import Contact from './pages/contact/contact';
+import OnlineShop from './pages/contact/onlineShop';
+import ClutchBrake from './pages/product/clutch_break';
+import Admin from './components/admin/admin';
+import AdminProduct from './components/admin/admProduct';
+import AdminNotice from './components/admin/admNotice';
+import AdminLibrary from './components/admin/admLibrary';
+import ProtectedRoute from './components/admin/protected-route';
+import Login from './components/admin/login';
+import BoardContent from './components/board/boardContent';
 
 const router = createBrowserRouter([
     {
@@ -33,8 +46,73 @@ const router = createBrowserRouter([
                         element: <CompanyHistory />
                     }
                 ]
+            },
+            {
+                path: "/product",
+                children: [
+                    {
+                        path: "/product/clutchBrake",
+                        element: <ClutchBrake />
+                    },
+                    {
+                        path: "/product/windPower",
+                        element: <WindPower />
+                    },
+                ]
+            },
+            {
+                path: "/board",
+                children: [
+                    {
+                        path: "/board/notice",
+                        element: <Notice />
+                    },
+                    {
+                        path: "/board/download",
+                        element: <Download />
+                    },
+                    {
+                        path: "/board/download/boardContent",
+                        element: <BoardContent />
+                    },
+                ]
+            },
+            {
+                path: "/contact",
+                children: [
+                    {
+                        path: "/contact/contactus",
+                        element: <Contact />
+                    },
+                    {
+                        path: "/contact/onlineShop",
+                        element: <OnlineShop />
+                    },
+                ]
             }
         ]
+    },
+    {
+        path: "/admin",
+        element: <ProtectedRoute><Admin/></ProtectedRoute>,
+        children: [
+            {
+                path: "/admin/adminProduct",
+                element: <AdminProduct />
+            },
+            {
+                path: "/admin/adminNotice",
+                element: <AdminNotice />
+            },
+            {
+                path: "/admin/adminLibrary",
+                element: <AdminLibrary />
+            },
+        ]
+    },
+    {
+        path: "/login",
+        element: <Login />
     },
 ]);
 

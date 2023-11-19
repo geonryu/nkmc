@@ -36,7 +36,7 @@ const Header = styled.header`
             // border-bottom: 1px solid #dee2e6;
             height: 200px;
         }
-s    }
+    }
 `;
 const HeaderWrap = styled.div`
     z-index: 20;

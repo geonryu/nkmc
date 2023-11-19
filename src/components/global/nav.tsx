@@ -23,9 +23,7 @@ const GNB = styled.ul`
     padding: 0;
     & > li > .sub div a .subko{font-size: 14px; position: relative; overflow: hidden;}
     & > li > .sub div a .subko::before{content: '';display: block; width: 4px; height: 4px; background-color: #8fc63f; border-radius: 50%; transition: all 0.3s; position: absolute; top: 50%; left: 0; transform: translate(-4px, -50%);}
-    & > li > .sub div:hover a .subko::before{transform: translate(0px, -50%);}
     & > li > .sub div a .subko span{transition: transform 0.2s; display: block;}
-    & > li > .sub div:hover a .subko span{transform: translateX(6px);}
 
     @media (min-width: 1200px) {
         height: 100%; border: 0 !important;
@@ -40,6 +38,7 @@ const GNB = styled.ul`
         & > li > .sub div a{font-size: 1rem !important; width: 100%;}
         & > li > .sub div a:hover{color: #8FC63F !important;}
         & > li > .sub div a .subko{font-size: 11px; position: relative; overflow: hidden;}
+        & > li > .sub div a:hover .subko span{color: #000;}
 
     }
 `;
@@ -73,22 +72,22 @@ export default function Navigation(props: any) {
         {
             title : {en: "PRODUCT", ko: "제품", key: "nav2",}, 
             sub : [
-                {subtitle: "Clutch & Brake", to: "/", key: "nav2-1", ko: "클러치&브레이크",},
-                {subtitle: "Wind Power", to: "/", key: "nav2-2", ko: "풍력발전",},
+                {subtitle: "Clutch & Brake", to: "/product/clutchBrake", key: "nav2-1", ko: "클러치&브레이크",},
+                {subtitle: "Wind Power", to: "/product/windPower", key: "nav2-2", ko: "풍력발전",},
             ]
         },
         {
             title : {en: "BOARD", ko: "게시판", key: "nav3",}, 
             sub : [
-                {subtitle: "Notice", to: "/", key: "nav3-1", ko: "공지사항",},
-                {subtitle: "Download", to: "/", key: "nav3-2", ko: "게시판",},
+                {subtitle: "Notice", to: "/board/notice", key: "nav3-1", ko: "공지사항",},
+                {subtitle: "Download", to: "/board/download", key: "nav3-2", ko: "게시판",},
             ]
         },
         {
             title : {en: "CONTACT", ko: "문의하기", key: "nav4",}, 
             sub : [
-                {subtitle: "Contact", to: "/", key: "nav4-1", ko: "문의하기",},
-                {subtitle: "Online Shop", to: "/", key: "nav4-2", ko: "온라인샵",},
+                {subtitle: "Contact", to: "/contact/contactus", key: "nav4-1", ko: "문의하기",},
+                {subtitle: "Online Shop", to: "/contact/onlineShop", key: "nav4-2", ko: "온라인샵",},
             ]
         },
     ];

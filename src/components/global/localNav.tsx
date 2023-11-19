@@ -24,7 +24,6 @@ interface ChildProps {
 }
   
 export default function LNB(props : ChildProps) {
-
     return (
         <LocalNavigation className="py-3">
             <Container>

@@ -48,7 +48,7 @@ const Prev = styled.div``;
 const Next = styled.div``;
 
 export default function Performance() {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [thumbsSwiper2, setThumbsSwiper2] = useState<any>(null);
 
     return(
         <Section className="py-5">
@@ -68,7 +68,7 @@ export default function Performance() {
                             modules={[Thumbs]}
                             className="visualSlider col-12"
                             speed={600}
-                            thumbs={{swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
+                            thumbs={{swiper: thumbsSwiper2 && !thumbsSwiper2.destroyed ? thumbsSwiper2 : null}}
                         >
                             <SwiperSlide>
                                 <TextBox>
@@ -95,7 +95,7 @@ export default function Performance() {
                     </Col>
                     <Col xs={12} md={6} className="txtSlider">
                         <Swiper
-                            onSwiper={setThumbsSwiper}
+                            onSwiper={setThumbsSwiper2}
                             loop={true}
                             effect={'fade'}
                             fadeEffect={{crossFade: true}}
@@ -118,7 +118,7 @@ export default function Performance() {
                                     <div className="text-center fw-bold mt-3">
                                         NKEC Performance as of 2023.11 Domestic 1
                                     </div>
-                                    <div className="btns mt-2">
+                                    <div className="btns mt-2 d-flex align-items-center justify-content-center justify-content-md-start">
                                         <div className="d-inline-block border-point text-point px-2 fs-6 fw-bold rounded-pill">123123</div>
                                     </div>
                                 </TextBox>
@@ -138,10 +138,10 @@ export default function Performance() {
                                 </TextBox>
                             </SwiperSlide>
                         </Swiper>
-                        <div className="d-flex align-items-center justify-content-start mt-3">
-                            <Prev className="col-2"><button className="d-flex align-items-center justify-content-center p-2 rounded-circle mx-auto text-gray-600 fw-bold prevBtn2"><span class="material-symbols-outlined">arrow_back</span></button></Prev>
+                        <div className="d-flex align-items-center justify-content-center justify-content-md-start mt-3">
+                            <Prev className="col-2"><button className="d-flex align-items-center justify-content-center p-2 rounded-circle mx-auto text-gray-600 fw-bold prevBtn2"><span className="material-symbols-outlined">arrow_back</span></button></Prev>
                             <div className="pagination" style={{"width": "auto"}}></div>
-                            <Next className="col-2"><button className="d-flex align-items-center justify-content-center p-2 rounded-circle mx-auto text-gray-600 fw-bold nextBtn2"><span class="material-symbols-outlined">arrow_forward</span></button></Next>
+                            <Next className="col-2"><button className="d-flex align-items-center justify-content-center p-2 rounded-circle mx-auto text-gray-600 fw-bold nextBtn2"><span className="material-symbols-outlined">arrow_forward</span></button></Next>
                         </div>
                     </Col>
                 </Row>

@@ -18,7 +18,6 @@ declare global {
       kakao: any;
     }
 }
-console.log(kakao)
 export default function MapKakao() {
     useEffect(() => {
         let container = document.getElementById('map');
@@ -35,7 +34,7 @@ export default function MapKakao() {
         });
         
         marker.setMap(map);
-      }, []);
+    }, []);
     
     return (
         <Section className="py-5">
