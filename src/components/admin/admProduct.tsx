@@ -8,11 +8,11 @@ const Section = styled.section``;
 export default function AdminProduct() {
     const [activePop, setActivePop] = useState(false);
     const [popType, setPopType] = useState("null");
-    const [printPop, setPrintPop] = useState<any[]>([]) || null;
+    const [printPop] = useState<any[]>([]) || null;
     const [category, setCategory] = useState("null");
 
 
-    const ClickToWrite = (e :React.ChangeEvent<HTMLButtonElement>) => {
+    const ClickToWrite = (e :React.MouseEvent<HTMLButtonElement>) => {
         setActivePop(true);
         setPopType("create");
 

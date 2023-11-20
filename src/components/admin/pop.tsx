@@ -23,10 +23,10 @@ export default function Pop(props: any) {
     const { type, category, printData } = props;
     const [tit, setTit] = useState("");
     const [content, setContent] = useState("");
-    const [file1, setFile1] = useState<File | null>(null);//File이거나 Null
-    const [file2, setFile2] = useState<File | null>(null);//File이거나 Null
-    const [file3, setFile3] = useState<File | null>(null);//File이거나 Null
-    const [file4, setFile4] = useState<File | null>(null);//File이거나 Null
+    const [file1, setFile1] = useState<any>(null);
+    const [file2, setFile2] = useState<any>(null);
+    const [file3, setFile3] = useState<any>(null);
+    const [file4, setFile4] = useState<any>(null);
     
     const closePop = () => {
         props.setActivePop(false);
@@ -79,7 +79,7 @@ export default function Pop(props: any) {
                 id: doc.id
             });
             if(file1) {
-                const locationRef = ref(storage, `${category}/${tit}/${doc.id}`);
+                const locationRef = ref(storage, `${category}/${`file1.name`}/${doc.id}`);
                 const result = await uploadBytes(locationRef, file1);
                 const url = await getDownloadURL(result.ref);
                 await updateDoc(doc, {
@@ -88,30 +88,30 @@ export default function Pop(props: any) {
                 });
             }
             if(file2) {
-                const locationRef = ref(storage, `${category}/${tit}/${doc.id}`);
+                const locationRef = ref(storage, `${category}/${`file2.name`}/${doc.id}`);
                 const result = await uploadBytes(locationRef, file2);
                 const url = await getDownloadURL(result.ref);
                 await updateDoc(doc, {
                     attached2: url,
-                    attached2name : file2.name
+                    attached2Name : file2.name
                 });
             }
             if(file3) {
-                const locationRef = ref(storage, `${category}/${tit}/${doc.id}`);
+                const locationRef = ref(storage, `${category}/${`file3.name`}/${doc.id}`);
                 const result = await uploadBytes(locationRef, file3);
                 const url = await getDownloadURL(result.ref);
                 await updateDoc(doc, {
                     attached3: url,
-                    attached3name : file3.name
+                    attached3Name : file3.name
                 });
             }
             if(file4) {
-                const locationRef = ref(storage, `${category}/${tit}/${doc.id}`);
+                const locationRef = ref(storage, `${category}/${`file4.name`}/${doc.id}`);
                 const result = await uploadBytes(locationRef, file4);
                 const url = await getDownloadURL(result.ref);
                 await updateDoc(doc, {
                     attached4: url,
-                    attached4name : file4.name
+                    attached4Name : file4.name
                 });
             }
 

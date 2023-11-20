@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import { useEffect, useState } from "react";
 import { db } from "../../../firebase";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const Section = styled.section`
 `;
@@ -34,7 +35,6 @@ export default function ElectroMagneticClutch() {
                     }
                 });
                 setBoardList(boardData);
-                console.log(boardData);
             });
         }
         fetchBoardDatas();
@@ -52,7 +52,6 @@ export default function ElectroMagneticClutch() {
                         modules={[Navigation]}
                         className="brake"
                         speed={600}
-                        slideToClickedSlide={true}
                         spaceBetween={30}
                         navigation={
                             {
@@ -73,10 +72,12 @@ export default function ElectroMagneticClutch() {
                     >
                         {
                             boardList.map((item) => {
-                                console.log(item)
                                 return(
-                                    <SwiperSlide className="bg-primary">
-                                        <img src={item.attached1} alt="" />
+                                    <SwiperSlide className="" key={item.tit}>
+                                        <Link to={item.attached2} target="_blank">
+                                            <img src={item.attached1} alt="" />
+                                            {/* <div>{item.tit}</div> */}
+                                        </Link>
                                     </SwiperSlide>
                                 )
                             })

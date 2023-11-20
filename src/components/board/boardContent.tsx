@@ -22,6 +22,7 @@ export interface state {
 export default function BoardContent() {
     const { state, pathname } = useLocation();
     const crtAt = new Date(state.createdAt);
+    console.log(state);
     return(
         <Section className="py-5">
             <Container>
@@ -36,9 +37,9 @@ export default function BoardContent() {
                         {state.content}
                     </div>
                     <div className="py-3">
-                        {state.attached2 ? "첨부파일 : " + <a className="text-primary text-decoration-undeline" href={state.attached2} download target="_blank">{state.attached2Name}</a> : null}
-                        {state.attached3 ? "첨부파일 : " + <a className="text-primary text-decoration-undeline" href={state.attached3} download target="_blank">{state.attached3Name}</a> : null}
-                        {state.attached4 ? "첨부파일 : " + <a className="text-primary text-decoration-undeline" href={state.attached4} download target="_blank">{state.attached4Name}</a> : null}
+                        <div>첨부파일1 : {state.attached2 ? <a className="text-primary text-decoration-undeline" href={state.attached2} download target="_blank">{state.attached2Name}</a> : null}</div>
+                        <div>첨부파일2 : {state.attached3 ? <a className="text-primary text-decoration-undeline" href={state.attached3} download target="_blank">{state.attached3Name}</a> : null}</div>
+                        <div>첨부파일3 : {state.attached4 ? <a className="text-primary text-decoration-undeline" href={state.attached4} download target="_blank">{state.attached4Name}</a> : null}</div>
                     </div>
                 </div>
             </Container>

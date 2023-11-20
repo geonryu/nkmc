@@ -6,11 +6,43 @@ import { Navigation } from "swiper/modules";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { useEffect, useState } from "react";
+import { Unsubscribe } from "firebase/auth";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { db } from "../../../firebase";
+import { Link } from "react-router-dom";
 
 const Section = styled.section`
     
 `;
 export default function ElectroMagneticClutchBrake() {
+    const [boardList, setBoardList] = useState<any[]>([]);
+
+    useEffect(() => {
+        let unsubscribe : Unsubscribe | null = null;
+        const fetchBoardDatas = async() => {
+            const boardQuery = query(
+                collection(db, "brake"),
+                orderBy("createdAt", "desc"),//날짜최신순
+                // limit(5)
+            );
+    
+            unsubscribe = await onSnapshot(boardQuery, (snapshot:any) => {
+                const boardData = snapshot.docs.map((doc:any) => {
+                    const { id, createdAt, tit, content, attached1, attached1Name, attached2, attached2Name, attached3, attached3Name, attached4, attached4Name } = doc.data()
+                    return {
+                        id, createdAt, tit, content, attached1, attached1Name, attached2, attached2Name, attached3, attached3Name, attached4, attached4Name
+                        // id: doc.id,
+                    }
+                });
+                setBoardList(boardData);
+            });
+        }
+        fetchBoardDatas();
+        return () => {
+            unsubscribe && unsubscribe();
+        }
+    }, []);
     return (
         <Section className="py-5">
             <Container>
@@ -21,7 +53,6 @@ export default function ElectroMagneticClutchBrake() {
                         modules={[Navigation]}
                         className="brake"
                         speed={600}
-                        slideToClickedSlide={true}
                         spaceBetween={30}
                         navigation={
                             {
@@ -40,12 +71,18 @@ export default function ElectroMagneticClutchBrake() {
                             },
                         }}
                     >
-                        <SwiperSlide className="bg-primary">zzzzz1</SwiperSlide>
-                        <SwiperSlide className="bg-primary">zzzzz2</SwiperSlide>
-                        <SwiperSlide className="bg-primary">zzzzz3</SwiperSlide>
-                        <SwiperSlide className="bg-primary">zzzzz4</SwiperSlide>
-                        <SwiperSlide className="bg-primary">zzzzz5</SwiperSlide>
-                        <SwiperSlide className="bg-primary">zzzzz6</SwiperSlide>
+                        {
+                            boardList.map((item) => {
+                                return(
+                                    <SwiperSlide className="" key={item.tit}>
+                                        <Link to={item.attached2} target="_blank">
+                                            <img src={item.attached1} alt="" />
+                                            {/* <div>{item.tit}</div> */}
+                                        </Link>
+                                    </SwiperSlide>
+                                )
+                            })
+                        }
                     </Swiper>
             </Container>
         </Section>
