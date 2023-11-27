@@ -77,7 +77,7 @@ export default function ElectroMagneticBrake() {
                                     <SwiperSlide className="" key={item.tit}>
                                         <Link to={item.attached2} target="_blank">
                                             <img src={item.attached1} alt="" />
-                                            {/* <div>{item.tit}</div> */}
+                                            <div className="text-center fw-bold mt-2">{item.tit}</div>
                                         </Link>
                                     </SwiperSlide>
                                 )

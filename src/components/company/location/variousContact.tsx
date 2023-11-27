@@ -25,6 +25,10 @@ const Contact = styled.div`
     justify-content: space-between;
 `;
 
+const handleCopy = () => {
+    window.navigator.clipboard.writeText("nkclutch@hanmail.net");
+}
+
 export default function VariousContact() {
     return (
         <Section className={"py-5"}>
@@ -44,8 +48,8 @@ export default function VariousContact() {
                         <Contact className="rounded-4 border bg-white p-3">
                             <Heading labelTxt={"Email 문의"} titTxt1={``} titTxt2={""} txtAlign={"left"}/>
                             <div>
-                                <span className="d-block fs-6 text-gray-400">Click to copy clipboard.</span>
-                                <button type="button">nkclutch@hanmail.net</button>    
+                                <span className="d-block fs-6 text-gray-500">Click to copy clipboard.</span>
+                                <button onClick={handleCopy} type="button" className="fw-bold">nkclutch@hanmail.net</button>    
                             </div>
                         </Contact>
                     </Col>

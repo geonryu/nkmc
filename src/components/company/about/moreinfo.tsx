@@ -60,7 +60,7 @@ export default function MoreInformation() {
                         <Quick className="quick1 p-3 p-md-3 p-lg-4 p-xl-5 bg-gray-100 rounded">
                             <Heading labelTxt={"History"} titTxt1={`남광전기가`} titTxt2={" 걸어온 길"} txtAlign={"left"} theme={""} className={"mb-5"}/>
                             <div className="fs-6 d-flex justify-content-end justify-content-md-start">
-                                <DefaultButton content={"Learn More"} type={"to"} theme={"light"} to={"/company/about"} />
+                                <DefaultButton content={"Learn More"} type={"to"} theme={"light"} to={"/company/companyHistory"} />
                             </div>
                         </Quick>
                     </Col>
@@ -68,7 +68,7 @@ export default function MoreInformation() {
                         <Quick className="quick2 p-3 p-md-3 p-lg-4 p-xl-5 bg-gray-100 rounded">
                             <Heading labelTxt={"Location"} titTxt1={`오시는 길`} titTxt2={""} txtAlign={"left"} theme={""} className={"mb-5"}/>
                             <div className="fs-6 d-flex justify-content-end justify-content-md-start">
-                                <DefaultButton content={"Learn More"} type={"to"} theme={"light"} to={"/company/about"} />
+                                <DefaultButton content={"Learn More"} type={"to"} theme={"light"} to={"/company/location"} />
                             </div>
                         </Quick>
                     </Col>
@@ -76,7 +76,7 @@ export default function MoreInformation() {
                         <Quick className="quick3 p-3 p-md-3 p-lg-4 p-xl-5 bg-gray-100 rounded">
                             <Heading labelTxt={"Contact Us"} titTxt1={`더 궁금한 점이`} titTxt2={" 있으신가요?"} txtAlign={"left"} theme={""} className={"mb-5"}/>
                             <div className="fs-6 d-flex justify-content-end justify-content-md-start">
-                                <DefaultButton content={"Get In Touch"} type={"to"} theme={"light"} to={"/company/about"} />
+                                <DefaultButton content={"Get In Touch"} type={"to"} theme={"light"} to={"/contact/contactus"} />
                             </div>
                         </Quick>
                     </Col>

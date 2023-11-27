@@ -3,31 +3,32 @@ import styled from "styled-components";
 import Heading from "../../global/heading";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from "swiper/modules";
-import { Unsubscribe } from "firebase/auth";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { useEffect, useState } from "react";
-import { db } from "../../../firebase";
+import { Unsubscribe } from "firebase/auth";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { db } from "../../../firebase";
 import { Link } from "react-router-dom";
 
 const Section = styled.section`
+    
 `;
-export default function ElectroMagneticClutch() {
+export default function DiscBrake() {
     const [boardList, setBoardList] = useState<any[]>([]);
 
     useEffect(() => {
         let unsubscribe : Unsubscribe | null = null;
         const fetchBoardDatas = async() => {
             const boardQuery = query(
-                collection(db, "clutch"),
+                collection(db, "discBrake"),
                 orderBy("createdAt", "desc"),//날짜최신순
                 // limit(5)
             );
     
-            unsubscribe = await onSnapshot(boardQuery, (snapshot) => {
-                const boardData = snapshot.docs.map((doc) => {
+            unsubscribe = await onSnapshot(boardQuery, (snapshot:any) => {
+                const boardData = snapshot.docs.map((doc:any) => {
                     const { id, createdAt, tit, content, attached1, attached1Name, attached2, attached2Name, attached3, attached3Name, attached4, attached4Name } = doc.data()
                     return {
                         id, createdAt, tit, content, attached1, attached1Name, attached2, attached2Name, attached3, attached3Name, attached4, attached4Name
@@ -43,9 +44,9 @@ export default function ElectroMagneticClutch() {
         }
     }, []);
     return (
-        <Section className="py-5">
+        <Section className="py-5 bg-gray-100">
             <Container>
-                <Heading labelTxt={"Clutch"} titTxt1={`Electro Magnetic`} titTxt2={" Clutches"} txtAlign={"center"}/>
+                <Heading labelTxt={"Brake"} titTxt1={`Disc Brakes`} titTxt2={""} txtAlign={"center"}/>
                 <Swiper
                         loop={true}
                         slidesPerView={2}

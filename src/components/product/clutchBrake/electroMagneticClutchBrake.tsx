@@ -22,7 +22,7 @@ export default function ElectroMagneticClutchBrake() {
         let unsubscribe : Unsubscribe | null = null;
         const fetchBoardDatas = async() => {
             const boardQuery = query(
-                collection(db, "brake"),
+                collection(db, "brakeAndClutch"),
                 orderBy("createdAt", "desc"),//날짜최신순
                 // limit(5)
             );
@@ -77,7 +77,7 @@ export default function ElectroMagneticClutchBrake() {
                                     <SwiperSlide className="" key={item.tit}>
                                         <Link to={item.attached2} target="_blank">
                                             <img src={item.attached1} alt="" />
-                                            {/* <div>{item.tit}</div> */}
+                                            <div className="text-center fw-bold mt-2">{item.tit}</div>
                                         </Link>
                                     </SwiperSlide>
                                 )

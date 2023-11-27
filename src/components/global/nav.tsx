@@ -87,7 +87,7 @@ export default function Navigation(props: any) {
             title : {en: "CONTACT", ko: "문의하기", key: "nav4",}, 
             sub : [
                 {subtitle: "Contact", to: "/contact/contactus", key: "nav4-1", ko: "문의하기",},
-                {subtitle: "Online Shop", to: "/contact/onlineShop", key: "nav4-2", ko: "온라인샵",},
+                // {subtitle: "Online Shop", to: "/contact/onlineShop", key: "nav4-2", ko: "온라인샵",},
             ]
         },
     ];
@@ -103,11 +103,22 @@ export default function Navigation(props: any) {
         props.headerStatus(true);
         setExtendSub("extend");
     } 
+    const onClickSub = () => {
+        props.headerStatus(false);
+        setIsClick(false);
+        setExtendSub("notExtend");
+    }
 
     useEffect(() => {
-        props.navStatus !== "" ? setIsClick(true) : setIsClick(false);
-        props.navStatus === "" ? setIsClick(false) : setExtendSub("notExtend");
-    }, [props.navStatus])
+        if(props.navStatus) {
+            setIsClick(true);
+            setExtendSub("extend");
+        } else{
+            setIsClick(false);
+            setExtendSub("notExtend");
+        }
+    }, [props.navStatus]);
+
     return (
         <GlobalNavigation className={isClick ? "extend" : ""} onMouseEnter={onMouseEnter}>
             <Container className="pt-3 pt-lg-0">
@@ -115,12 +126,12 @@ export default function Navigation(props: any) {
                     {siteMap.map((list, i) => {
                         return (
                             <Navi key={list.title.key} onClick={onClick} data-idx={i} className={`border-bottom mx-xl-3 ${Number(extendSub) === i ? "active" : ""}`}>
-                                <Ref>
+                                <Ref onClick={onMouseEnter}>
                                     <button className="d-block w-100 text-start py-2 d-xl-flex justify-content-center align-items-center">
                                         <div className="ko fs-6 fw-bold text-point d-lg-none">{list.title.ko}</div>
                                         <div className="en fw-bold fs-4 d-flex align-items-center justify-content-between">
                                             {list.title.en}
-                                            <div className="arr d-lg-none">
+                                            <div className="arr d-xl-none">
                                                 <Arrow xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="#8FC63F" className="w-6 h-6">
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
                                                 </Arrow>
@@ -129,7 +140,7 @@ export default function Navigation(props: any) {
                                     </button>
                                 </Ref>
                                 {/* style={{height: extendSub === "extend" ? "126px" : 0}} */}
-                                <SubNavi className={`sub ${Number(extendSub) === i ? "d-block" : "d-none"}`} >
+                                <SubNavi onClick={onClickSub}  className={`sub ${Number(extendSub) === i ? "d-block" : "d-none"}`} >
                                     {list.sub.map((item) => {
                                         return (
                                             <div key={item.key} className="sub-item">

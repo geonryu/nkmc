@@ -3,6 +3,7 @@ import MileStone from "../../components/company/history/milestone";
 import Performance from "../../components/company/history/performance";
 import LNB from "../../components/global/localNav";
 import LocalNavVisual from "../../components/global/localNavVisual";
+import Certification from "../../components/company/history/certification";
 
 const Wrapper = styled.div`
 `;
@@ -29,6 +30,7 @@ export default function CompanyHistory() {
                 altText={"회사연혁"}
             ></LocalNavVisual>
             <MileStone></MileStone>
+            <Certification></Certification>
             <Performance></Performance>
         </Wrapper>
     )

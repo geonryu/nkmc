@@ -69,25 +69,27 @@ export default function GlobalHeader() {
 
     const onClickNavBtn = () => {
         navBtn === "" ? setNavBtn("active") : setNavBtn("");
+        setHeaderStatus(!headerStatus);
+        console.log(headerStatus);
     }
     const onMouseLeave = () => {
         setHeaderStatus(false);
     }
     return (
-        <Header onMouseLeave={onMouseLeave} className={`bg-white ${headerStatus || navBtn === "active" ? "extend" : ""} border-bottom d-flex align-itmes-lg-start`}>
+        <Header onMouseLeave={onMouseLeave} className={`bg-white ${headerStatus ? "extend" : ""} border-bottom d-flex align-itmes-lg-start`}>
             <Container className="position-relative">
                 <HeaderWrap className="bg-white bg-lg-none h-100 d-flex justify-content-between align-items-center position-relative">
                     <Col xs={5} md={3} lg={2} className="h-100">
-                        <Logo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo-re-dft.svg?alt=media&token=8e24f669-b3b0-4d6c-8d2b-e14c7a6dc3fc" alt="남광전기" /></Link></Logo>
+                        <Logo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo.svg?alt=media&token=808a9900-9114-4db6-bb08-70a6a265501d" alt="남광전기" /></Link></Logo>
                     </Col>
                     <Div className="btn-menu-opn">
-                        <BtnNavOpen onClick={onClickNavBtn} className={navBtn}>
+                        <BtnNavOpen onClick={onClickNavBtn} className={headerStatus ? "active" : ""}>
                             <InBtnSpan>메뉴</InBtnSpan>
                             <InBtnSpan>열기</InBtnSpan>
                         </BtnNavOpen>
                     </Div>
                 </HeaderWrap>
-                <Navigation navStatus={navBtn} headerStatus={setHeaderStatus}/>
+                <Navigation navStatus={headerStatus} headerStatus={setHeaderStatus}/>
             </Container>
         </Header>
     )

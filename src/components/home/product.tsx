@@ -26,7 +26,7 @@ export default function Product() {
             <Container> 
                 <Row>
                     <Col xs={12} md={6} lg={4} className="d-flex flex-column justify-content-center">
-                        <Heading labelTxt={"About Us"} titTxt1={`We are the company specialized in`} titTxt2={" electric cluth and brake"} txtAlign={"left"}/>
+                        <Heading labelTxt={"Product"} titTxt1={`We are the company specialized in`} titTxt2={" electric cluth and brake"} txtAlign={"left"}/>
                         <div className="mb-2">
                             Check out Namkwang's wind power products
                         </div>
@@ -73,7 +73,7 @@ export default function Product() {
                         </Products>
                     </Col>
                     <div className="text-center d-block d-md-none">
-                        <DefaultButton content={"Explorer"} type={"to"} theme={"light"} to={"/company/about"} />
+                        <DefaultButton content={"Explorer"} type={"to"} theme={"light"} to={"/product/clutchBrake"} />
                     </div>
                 </Row>
             </Container>

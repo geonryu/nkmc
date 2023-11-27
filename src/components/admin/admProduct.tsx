@@ -28,6 +28,7 @@ export default function AdminProduct() {
                     <Button type="button" className="bg-point border-0 fw-bold me-2 ms-auto" name="clutch" onClick={ClickToWrite}>클러치</Button>
                     <Button type="button" className="bg-point border-0 fw-bold me-2" name="brake" onClick={ClickToWrite}>브레이크</Button>
                     <Button type="button" className="bg-point border-0 fw-bold me-2" name="brakeAndClutch" onClick={ClickToWrite}>브레이크클러치</Button>
+                    <Button type="button" className="bg-point border-0 fw-bold me-2" name="discBrake" onClick={ClickToWrite}>디스크브레이크</Button>
                 </div>
 
             </Container>

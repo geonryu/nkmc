@@ -4,6 +4,7 @@ import LocalNavVisual from "../../components/global/localNavVisual";
 import ElectroMagneticClutchBrake from "../../components/product/clutchBrake/electroMagneticClutchBrake";
 import ElectroMagneticBrake from "../../components/product/clutchBrake/electroMagneticBrake";
 import ElectroMagneticClutch from "../../components/product/clutchBrake/electroMagneticClutch";
+import DiscBrake from "../../components/product/clutchBrake/discBrake";
 
 
 const Wrapper = styled.div`
@@ -33,6 +34,7 @@ export default function ClutchBrake() {
             <ElectroMagneticClutchBrake></ElectroMagneticClutchBrake>
             <ElectroMagneticBrake></ElectroMagneticBrake>
             <ElectroMagneticClutch></ElectroMagneticClutch>
+            <DiscBrake></DiscBrake>
         </Wrapper>
     )
 }

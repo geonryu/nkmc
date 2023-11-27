@@ -25,7 +25,7 @@ export default function Contact() {
                     </div>
                     
                     <div className="text-center">
-                        <DefaultButton content={"Contact"} type={"to"} theme={"light"} to={"/company/about"} />
+                        <DefaultButton content={"Contact"} type={"to"} theme={"light"} to={"/contact/contactus"} />
                     </div>
                 </div>
             </Container>
