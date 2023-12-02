@@ -32,9 +32,9 @@ const Copyright = styled.p`
 export default function GlobalFooter() {
 
     return (
-        <Footer className="bg-white py-5">
+        <Footer className="py-5 bg-dark-1">
             <Container className="h-100 position-relative">
-                <FooterWrap className="bg-white">
+                <FooterWrap>
                     <Row>
                         <Col xs={4} md={3} lg={2} className="h-100 mx-auto mx-md-0">
                             <FLogo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo.svg?alt=media&token=808a9900-9114-4db6-bb08-70a6a265501d" alt="남광전기" /></Link></FLogo>

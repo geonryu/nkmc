@@ -1,8 +1,10 @@
+
+
 $theme-colors: (
     "black" : #000000,
     "white" : #ffffff,
     "point" : #8FC63F,
-    "main" : #8FC63F,
+    "main" : #a2f02e,
     "deep": #005E20,
     "light1" : #EEF7E2,
     "light2" : #FFE6CB,
@@ -20,11 +22,15 @@ $theme-colors: (
     "gray-600": #6c757d,
     "gray-700": #495057,
     "gray-800": #343a40,
-    "gray-900": #212529
-
+    "gray-900": #212529,
+    "dark-1" : #3e4759,
+    "dark-2" : #283041
     // "primary":    #6900FF,
 );
-
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/mixins";
 // $font-sizes : (
 //     1: 1.75rem, //m28
 //     2: 1.5rem, //m24
@@ -34,8 +40,6 @@ $theme-colors: (
 //     6: .75rem, //m12
 //     7: .625rem, //m10
 // );
-
-@import "../node_modules/bootstrap/scss/bootstrap";
 
 :root {
     --bs-link-color: unset;

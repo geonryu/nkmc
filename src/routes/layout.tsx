@@ -13,7 +13,7 @@ const Main = styled.main`
 export default function Layout() {
     
     return (
-        <Wrapper>
+        <Wrapper className="bg-dark-2">
             <GlobalHeader></GlobalHeader>
             <Main>
                 <Outlet />

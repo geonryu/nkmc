@@ -5,7 +5,6 @@ import styled from "styled-components"
 
 const GlobalNavigation = styled.nav`
     position: fixed; width: 100%; height: 100%; top: 0; left: -100%; padding-top: 60px; transition: left 0.2s; z-index: 10;
-    background-color: #ffffff;
     &.extend{left: 0;}
 
     @media (min-width: 1200px) {
@@ -38,7 +37,7 @@ const GNB = styled.ul`
         & > li > .sub div a{font-size: 1rem !important; width: 100%;}
         & > li > .sub div a:hover{color: #8FC63F !important;}
         & > li > .sub div a .subko{font-size: 11px; position: relative; overflow: hidden;}
-        & > li > .sub div a:hover .subko span{color: #000;}
+        // & > li > .sub div a:hover .subko span{color: #000;}
 
     }
 `;
@@ -120,7 +119,7 @@ export default function Navigation(props: any) {
     }, [props.navStatus]);
 
     return (
-        <GlobalNavigation className={isClick ? "extend" : ""} onMouseEnter={onMouseEnter}>
+        <GlobalNavigation className={`bg-dark-2 ${isClick ? "extend" : ""}`} onMouseEnter={onMouseEnter}>
             <Container className="pt-3 pt-lg-0">
                 <GNB className="gnb border-top p-0 d-xl-flex justify-content-between">
                     {siteMap.map((list, i) => {
@@ -129,7 +128,7 @@ export default function Navigation(props: any) {
                                 <Ref onClick={onMouseEnter}>
                                     <button className="d-block w-100 text-start py-2 d-xl-flex justify-content-center align-items-center">
                                         <div className="ko fs-6 fw-bold text-point d-lg-none">{list.title.ko}</div>
-                                        <div className="en fw-bold fs-4 d-flex align-items-center justify-content-between">
+                                        <div className="en text-white fw-bold fs-4 d-flex align-items-center justify-content-between">
                                             {list.title.en}
                                             <div className="arr d-xl-none">
                                                 <Arrow xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="#8FC63F" className="w-6 h-6">
@@ -144,8 +143,8 @@ export default function Navigation(props: any) {
                                     {list.sub.map((item) => {
                                         return (
                                             <div key={item.key} className="sub-item">
-                                                <Link to={item.to} className="d-block fs-3 fw-bold text-gray-800 px-3 px-xl-0 py-2">
-                                                    <div className="subko text-gray-500"><span>{item.ko}</span></div>
+                                                <Link to={item.to} className="d-block fs-3 fw-bold px-3 px-xl-0 py-2">
+                                                    <div className="subko text-point"><span>{item.ko}</span></div>
                                                     <div>{item.subtitle}</div>
                                                 </Link>
                                             </div>

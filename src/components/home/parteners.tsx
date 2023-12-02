@@ -6,12 +6,12 @@ const Partener = styled.div`
 `;
 
 const PartenerList = styled.div`
-    filter : saturate(0) brightness(1.2);
+    filter : saturate(0) brightness(3);
 `;
 
 export default function Parteners() {
     return (
-        <Partener className="py-5 bg-gray-100">
+        <Partener className="py-5 bg-gray-100 bg-dark">
             <Container>
                 <Heading labelTxt={"Our Partners"} titTxt1={""} titTxt2={""} txtAlign={"center"}/>
                 <PartenerList className="d-flex mt-3 flex-wrap justify-content-center align-items-center">

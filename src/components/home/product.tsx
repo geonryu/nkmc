@@ -22,7 +22,7 @@ const Slide = styled.div`
 export default function Product() {
 
     return(
-        <Section className="py-5 bg-gray-100">
+        <Section className="py-5 bg-dark">
             <Container> 
                 <Row>
                     <Col xs={12} md={6} lg={4} className="d-flex flex-column justify-content-center">

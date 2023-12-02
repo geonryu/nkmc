@@ -139,7 +139,7 @@ function App() {
     // const [count, setCount] = useState(0)
     
     return (
-        <Wrapper>
+        <Wrapper className='text-white'>
             <GlobalStyles />
             <RouterProvider router={router}/>
         </Wrapper>
