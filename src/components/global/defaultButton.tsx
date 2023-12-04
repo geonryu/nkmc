@@ -12,7 +12,10 @@ const PillButton = styled.div`
     &.dark{
         background-color: #fff;
         color: #8fc63f;
-
+    }
+    &.default{
+        background-color: #8fc63f;
+        color: #fff;
     }
     &:hover{
         color: #fff;

@@ -12,7 +12,6 @@ import 'swiper/css/thumbs';
 import 'swiper/css/effect-fade';
 
 const Section = styled.section`
-    
 `;
 const Products = styled.div`
 `;

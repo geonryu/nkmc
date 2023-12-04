@@ -11,32 +11,10 @@ const Div = styled.div`
 `;
 const Header = styled.header`
     position: fixed; top: 0; left: 0; width: 100%; z-index: 99999; transition: all 0.4s; height: 66px;
-    
-    & > .container {height: 65px;}
-    @media (min-width: 1200px) {
-        overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-        &.extend{height: 260px}
-        & .sub{
-            display: block !important;
-            height: unset;
-        }
-        &::after{
-            // content: '';
-            display: block;
-            width: 100%;
-            height: 0;
-            transition: height 0.3s;
-            background-color: #fff;
-            // position: absolute;
-            top: 100%;
-            left: 0;
-        }
-        &.extend::after{
-            // border-bottom: 1px solid #dee2e6;
-            height: 200px;
-        }
-    }
+    & > .container {height: 65px;}
 `;
 const HeaderWrap = styled.div`
     z-index: 20;
@@ -76,7 +54,7 @@ export default function GlobalHeader() {
         setHeaderStatus(false);
     }
     return (
-        <Header onMouseLeave={onMouseLeave} className={`${headerStatus ? "extend" : ""} bg-dark-1 border-bottom border-white d-flex align-itmes-lg-start`}>
+        <Header onMouseLeave={onMouseLeave} className={`${headerStatus ? "extend" : ""} border-bottom d-flex align-itmes-lg-start`}>
             <Container className="position-relative">
                 <HeaderWrap className="bg-lg-none h-100 d-flex justify-content-between align-items-center position-relative">
                     <Col xs={5} md={3} lg={2} className="h-100">
