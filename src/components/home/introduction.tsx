@@ -54,17 +54,16 @@ export default function Introduction () {
         if (elementRef.current) {
             gsap.to(elementRef.current, {
                 scrollTrigger: {
-                trigger: elementRef.current,
-                start: 'top center',
-                end: 'bottom center',
-                onToggle: ({ isActive }) => {
-                    if (isActive) {
-                        SetActive(true);
-                    }
+                    trigger: elementRef.current,
+                    start: 'top center',
+                    end: 'bottom center',
+                    onToggle: ({ isActive }) => {
+                        if (isActive) {
+                            SetActive(true);
+                        }
+                    },
                 },
-    
-            },
-          });
+            });
         }
     }, []);
 
