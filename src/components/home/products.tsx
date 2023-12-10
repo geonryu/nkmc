@@ -1,8 +1,14 @@
-import { Accordion, AccordionButton, AccordionHeader, AccordionItem, Card, Container, Row } from "react-bootstrap";
+import { Accordion, AccordionButton, AccordionItem, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import Heading from "../global/heading";
 import DefaultButton from "../global/defaultButton";
 import AccordionBody from "react-bootstrap/esm/AccordionBody";
+import { useState } from "react";
+import ThumbMagneticClutchBrake from "./productsThumbs/magneticClutchBrake";
+import ThumbElectroMagneticBrake from "./productsThumbs/electroMagneticBrake";
+import ThumbElectroMagneticClutch from "./productsThumbs/electroMagneticClutch";
+import ThumbDiscBrake from "./productsThumbs/discBrake";
+import ThumbWindPower from "./productsThumbs/windPower";
 
 const Section = styled.section`
     position: relative;
@@ -14,65 +20,68 @@ const Section = styled.section`
     & .accordion-button{background-color: transparent !important; box-shadow: none !important;}
     & .accordion-body{background-color: transparent !important;}
 `;
-// const Items = styled.div``;
-// const Item = styled.div``;
+
 const Thumbs = styled.div``;
-const Thumb = styled.div``;
 
 export default function Products() {
+    const [idx, setIdx] = useState("0");
+
+    const handleAccordion = (e:React.MouseEvent<HTMLDivElement>) => {
+        const idx = e.currentTarget.getAttribute("data-idx") || "0";
+        setIdx(idx);
+    }
+
     return(
         <Section className="py-5 bg-dark">
             <Container className="py-5">
-                <div className="d-flex flex-column flex-md-row align-items-md-end justify-content-md-between mb-5">
-                    <div className="col col-12 col-md-6"><Heading labelTxt={"Product"} titTxt1={`We are the company specialized in`} titTxt2={" electric cluth and brake"} txtAlign={"left"}/></div>
-                    <div>
-                        <DefaultButton content={"Explorer"} type={"to"} theme={"light"} to={"/company/about"} />
-                    </div>
-                </div>
-                <Row>
-                    <Accordion className="col-12 col-md-6" defaultActiveKey="0">
-                        <AccordionItem eventKey="0" className="border-0 rounded-0 border-bottom border-top">
-                            <AccordionButton className="text-white py-2 px-0">동해물과 백두산이</AccordionButton>
+                <Row className="align-items-end">
+                    <Accordion className="col-12 col-md-7" defaultActiveKey="0">
+                        <div className="justify-content-md-between mb-5">
+                            <Heading labelTxt={"Product"} titTxt1={`We are the company specialized in`} titTxt2={" electric cluth and brake"} txtAlign={"left"}/>
+                            <DefaultButton content={"Explorer"} type={"to"} theme={"light"} to={"/company/about"} />
+                        </div>
+                        <AccordionItem onClick={handleAccordion} data-idx="0" eventKey="0" className="border-0 rounded-0 border-bottom border-top">
+                            <AccordionButton className="text-white py-2 px-0 fw-bold">MAGNETIC CLUTCH & BRAKE</AccordionButton>
                             <AccordionBody className="p-0 py-3">
                                 <div className="text-white mb-3">동해물과 백둣나이 마르고 닳도록 하는님이 보우하사 우리나라 만세</div>
-                                <div className="text-white thumb bg-primary">asdasd</div>
+                                <div className="d-md-none"><ThumbElectroMagneticBrake /></div>
                             </AccordionBody>
                         </AccordionItem>
-                        <AccordionItem eventKey="1" className="border-0 rounded-0 border-bottom">
-                            <AccordionButton className="text-white py-2 px-0">동해물과 백두산이</AccordionButton>
+                        <AccordionItem onClick={handleAccordion} data-idx="1" eventKey="1" className="border-0 rounded-0 border-bottom">
+                            <AccordionButton className="text-white py-2 px-0 fw-bold">ELECTRO MAGNETIC BRAKE</AccordionButton>
                             <AccordionBody className="p-0 py-3">
                                 <div className="text-white mb-3">동해물과 백둣나이 마르고 닳도록 하는님이 보우하사 우리나라 만세</div>
-                                <div className="text-white thumb bg-point">asdasd</div>
+                                <div className="d-md-none"><ThumbElectroMagneticBrake /></div>
                             </AccordionBody>
                         </AccordionItem>
-                        <AccordionItem eventKey="2" className="border-0 rounded-0 border-bottom">
-                            <AccordionButton className="text-white py-2 px-0">동해물과 백두산이</AccordionButton>
+                        <AccordionItem onClick={handleAccordion} data-idx="2" eventKey="2" className="border-0 rounded-0 border-bottom">
+                            <AccordionButton className="text-white py-2 px-0 fw-bold">ELECTRO MAGNETIC CLUTCH</AccordionButton>
                             <AccordionBody className="p-0 py-3">
                                 <div className="text-white mb-3">동해물과 백둣나이 마르고 닳도록 하는님이 보우하사 우리나라 만세</div>
-                                <div className="text-white thumb bg-gray-400">asdasd</div>
+                                <div className="d-md-none"><ThumbElectroMagneticClutch /></div>
                             </AccordionBody>
                         </AccordionItem>
-                        <AccordionItem eventKey="3" className="border-0 rounded-0 border-bottom">
-                            <AccordionButton className="text-white py-2 px-0">동해물과 백두산이</AccordionButton>
+                        <AccordionItem onClick={handleAccordion} data-idx="3" eventKey="3" className="border-0 rounded-0 border-bottom">
+                            <AccordionButton className="text-white py-2 px-0 fw-bold">DISC BRAKE</AccordionButton>
                             <AccordionBody className="p-0 py-3">
                                 <div className="text-white mb-3">동해물과 백둣나이 마르고 닳도록 하는님이 보우하사 우리나라 만세</div>
-                                <div className="text-white thumb bg-light1">asdasd</div>
+                                <div className="d-md-none"><ThumbDiscBrake /></div>
+                            </AccordionBody>
+                        </AccordionItem>
+                        <AccordionItem onClick={handleAccordion} data-idx="4" eventKey="4" className="border-0 rounded-0 border-bottom">
+                            <AccordionButton className="text-white py-2 px-0 fw-bold">WIND POWER</AccordionButton>
+                            <AccordionBody className="p-0 py-3">
+                                <div className="text-white mb-3">동해물과 백둣나이 마르고 닳도록 하는님이 보우하사 우리나라 만세</div>
+                                <div className="d-md-none"><ThumbWindPower /></div>
                             </AccordionBody>
                         </AccordionItem>
                     </Accordion>
-                    <Thumbs className="d-none d-md-block col-6">
-                        <Thumb>
-                            <div className="thumb bg-primary">12123</div>
-                        </Thumb>
-                        <Thumb>
-                            <div className="thumb bg-point">1212</div>
-                        </Thumb>
-                        <Thumb>
-                            <div className="thumb bg-gray-400">1212</div>
-                        </Thumb>
-                        <Thumb>
-                            <div className="thumb bg-light1"></div>
-                        </Thumb>
+                    <Thumbs className="d-none d-md-block col-5">
+                        { idx === '0' ? <ThumbMagneticClutchBrake /> : null }
+                        { idx === '1' ? <ThumbElectroMagneticBrake /> : null }
+                        { idx === '2' ? <ThumbElectroMagneticClutch /> : null }
+                        { idx === '3' ? <ThumbDiscBrake /> : null }
+                        { idx === '4' ? <ThumbWindPower /> : null }
                     </Thumbs>
                 </Row>
             </Container>
