@@ -11,10 +11,18 @@ const Div = styled.div`
 `;
 const Header = styled.header`
     position: fixed; top: 0; left: 0; width: 100%; z-index: 99999; transition: all 0.4s; height: 66px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 
     & > .container {height: 65px;}
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(7.5px);
+        -webkit-backdrop-filter: blur(7.5px);
+    }
 `;
 const HeaderWrap = styled.div`
     z-index: 20;
@@ -37,11 +45,13 @@ const InBtnSpan = styled.span`
     &:first-child{
         margin-bottom: 5px;
     }
-    &::before{content: ''; display: block; width: 5px; height: 5px; background-color: #fff; transition: all 0.3s; margin-right: 5px;}
-    &::after{content: ''; display: block; width: 5px; height: 5px; background-color: #fff; transition: all 0.3s;}
+    &::before{content: ''; display: block; width: 5px; height: 5px; background-color: #222; transition: all 0.3s; margin-right: 5px;}
+    &::after{content: ''; display: block; width: 5px; height: 5px; background-color: #222; transition: all 0.3s;}
+    &.dark::before{content: ''; display: block; width: 5px; height: 5px; background-color: #fff; transition: all 0.3s; margin-right: 5px;}
+    &.dark::after{content: ''; display: block; width: 5px; height: 5px; background-color: #fff; transition: all 0.3s;}
 `;
 
-export default function GlobalHeader() {
+export default function GlobalHeader(props: any) {
     const [navBtn, setNavBtn] = useState("");
     const [headerStatus, setHeaderStatus] = useState(false);
 
@@ -58,17 +68,22 @@ export default function GlobalHeader() {
             <Container className="position-relative">
                 <HeaderWrap className="bg-lg-none h-100 d-flex justify-content-between align-items-center position-relative">
                     <Col xs={5} md={3} lg={2} className="h-100">
-                        {/* <Logo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo.svg?alt=media&token=808a9900-9114-4db6-bb08-70a6a265501d" alt="남광전기" /></Link></Logo> */}
-                        <Logo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo-w.svg?alt=media&token=5332c4ee-44ad-4d6d-9d6c-9b915fae8d3a" alt="남광전기" /></Link></Logo>
+                        {
+                            props.theme === "dark" ? (
+                                <Logo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo-w.svg?alt=media&token=5332c4ee-44ad-4d6d-9d6c-9b915fae8d3a" alt="남광전기" /></Link></Logo>
+                                ) : (
+                                <Logo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo.svg?alt=media&token=808a9900-9114-4db6-bb08-70a6a265501d" alt="남광전기" /></Link></Logo>
+                            )
+                        }
                     </Col>
                     <Div className="btn-menu-opn">
                         <BtnNavOpen onClick={onClickNavBtn} className={headerStatus ? "active" : ""}>
-                            <InBtnSpan>메뉴</InBtnSpan>
-                            <InBtnSpan>열기</InBtnSpan>
+                            <InBtnSpan className={props.theme}>메뉴</InBtnSpan>
+                            <InBtnSpan className={props.theme}>열기</InBtnSpan>
                         </BtnNavOpen>
                     </Div>
                 </HeaderWrap>
-                <Navigation navStatus={headerStatus} headerStatus={setHeaderStatus}/>
+                <Navigation theme={props.theme} navStatus={headerStatus} headerStatus={setHeaderStatus}/>
             </Container>
         </Header>
     )

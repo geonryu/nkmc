@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import GlobalHeader from "../components/global/header";
 import { Outlet } from "react-router-dom";
 import GlobalFooter from "../components/global/footer";
@@ -10,15 +10,15 @@ const Main = styled.main`
     padding-top: 65px;
 `;
 
-export default function Layout() {
-    
+
+export default function Mainpage() {
     return (
-        <Wrapper>
-            <GlobalHeader></GlobalHeader>
+        <Wrapper className="bg-dark-2">
+            <GlobalHeader theme="dark"></GlobalHeader>
             <Main>
                 <Outlet />
             </Main>
-            <GlobalFooter></GlobalFooter>
+            <GlobalFooter theme="dark"></GlobalFooter>
         </Wrapper>
     )
 }

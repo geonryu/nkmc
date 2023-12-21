@@ -29,15 +29,20 @@ const Copyright = styled.p`
     }
 `;
 
-export default function GlobalFooter() {
-
+export default function GlobalFooter(props: any) {
     return (
-        <Footer className="py-5 bg-dark-1">
+        <Footer className={`py-5 ${props.theme === "dark" ? "bg-dark-1 text-white" : ""}`}>
             <Container className="h-100 position-relative">
                 <FooterWrap>
                     <Row>
                         <Col xs={4} md={3} lg={2} className="h-100 mx-auto mx-md-0">
-                            <FLogo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo-w.svg?alt=media&token=5332c4ee-44ad-4d6d-9d6c-9b915fae8d3a" alt="남광전기" /></Link></FLogo>
+                            {
+                                props.theme === "dark" ? (
+                                    <FLogo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo-w.svg?alt=media&token=5332c4ee-44ad-4d6d-9d6c-9b915fae8d3a" alt="남광전기" /></Link></FLogo>
+                                ) : (
+                                    <FLogo className="h-100 py-2 d-flex align-items-center"><Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/namkwang-87a2f.appspot.com/o/assets%2Fimages%2Flogo.svg?alt=media&token=808a9900-9114-4db6-bb08-70a6a265501d" alt="남광전기" /></Link></FLogo>
+                                )
+                            }
                         </Col>
                         <Col xs={12} md={9} lg={"auto"} className="mt-2 ms-lg-auto">
                             <Address>19, Eulsukdo-daero 569beon-gil, Saha-gu, Busan, <br className="d-none d-sm-block d-md-none"/>Republic of Korea</Address>

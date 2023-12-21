@@ -91,7 +91,7 @@ export default function Navigation(props: any) {
     }, [props.navStatus]);
 
     return (
-        <GlobalNavigation className={`bg-dark-2 ${isClick ? "extend" : ""}`} onMouseEnter={onMouseEnter}>
+        <GlobalNavigation className={`${props.theme === "dark" ? "bg-dark-2" : "bg-white"} ${isClick ? "extend" : ""}`} onMouseEnter={onMouseEnter}>
             <Container className="pt-3 pt-lg-0">
                 <GNB className="gnb border-top p-0">
                     {siteMap.map((list, i) => {
@@ -100,7 +100,7 @@ export default function Navigation(props: any) {
                                 <Ref onClick={onMouseEnter}>
                                     <button className="d-block w-100 text-start py-2">
                                         <div className="ko fs-6 fw-bold text-point d-lg-none">{list.title.ko}</div>
-                                        <div className="en text-white fw-bold fs-4 d-flex align-items-center justify-content-between">
+                                        <div className={`en ${props.theme === "dark" ? "text-white" : "text-gray-800"} fw-bold fs-4 d-flex align-items-center justify-content-between`}>
                                             {list.title.en}
                                             <div className="arr">
                                                 <Arrow xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="#8FC63F" className="w-6 h-6">
@@ -117,7 +117,7 @@ export default function Navigation(props: any) {
                                             <div key={item.key} className="sub-item">
                                                 <Link to={item.to} className="d-block fs-3 fw-bold px-3 px-xl-0 py-2">
                                                     <div className="subko text-point"><span>{item.ko}</span></div>
-                                                    <div>{item.subtitle}</div>
+                                                    <div className={props.theme === "dark" ? "text-white" : "text-gray-800"}>{item.subtitle}</div>
                                                 </Link>
                                             </div>
                                         )//second return

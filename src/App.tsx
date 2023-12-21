@@ -20,16 +20,23 @@ import AdminLibrary from './components/admin/admLibrary';
 import Login from './components/admin/login';
 import BoardContent from './components/board/boardContent';
 import ProtectedRoute from './components/admin/protected-route';
+import Mainpage from './routes/main';
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Layout/>,
+        element: <Mainpage/>,
         children: [
             {
                 path:"", 
                 element: <Home />
             },
+        ]
+    },
+    {
+        path: "/",
+        element: <Layout/>,
+        children: [
             {
                 path: "/company",
                 children: [
@@ -139,7 +146,7 @@ function App() {
     // const [count, setCount] = useState(0)
     
     return (
-        <Wrapper className='text-white'>
+        <Wrapper>
             <GlobalStyles />
             <RouterProvider router={router}/>
         </Wrapper>
