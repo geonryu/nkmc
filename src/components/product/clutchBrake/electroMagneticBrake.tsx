@@ -44,7 +44,7 @@ export default function ElectroMagneticBrake() {
         }
     }, []);
     return (
-        <Section className="py-5 bg-gray-100">
+        <Section className="py-5 bg-gray-200">
             <Container>
                 <Heading labelTxt={"Brake"} titTxt1={`Electro Magnetic`} titTxt2={" Brakes"} txtAlign={"center"}/>
                 <Swiper

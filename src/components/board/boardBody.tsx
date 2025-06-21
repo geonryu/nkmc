@@ -84,7 +84,7 @@ export default function BoardBody(props: any) {
                             <Td className="me-3 col-3 col-md-2">
                                 <div className="px-2">Date</div>
                             </Td>
-                            <Td className="col-10">
+                            <Td className="col-9 col-md-10">
                                 <div className="px-2">Content</div >
                             </Td>
                         </Th>

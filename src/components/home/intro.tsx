@@ -54,7 +54,8 @@ export default function Intro() {
                         <Col xs={12} md={7} className="text-center mx-auto">
                             <Txt data-aos={"fade-up"} data-aos-duration={200}>
                                 <div className="en mb-2 fs-5 z-1">
-                                    We will strive to become an <span><b className="fw-bold">eco-friendly</b></span> energy company based on the abundant experience and know-how of clutch and brake technology over <span><b className="fw-bold">50 years ago.</b></span>
+                                    {/* We will strive to become an <span><b className="fw-bold">eco-friendly</b></span> energy company based on the abundant experience and know-how of clutch and brake technology over <span><b className="fw-bold">50 years ago.</b></span> */}
+                                    We will strive to become an <b className="fw-bold">eco-friendly</b> energy company based on the abundant experience and know-how of clutch and brake technology over <b className="fw-bold">50 years ago.</b>
                                 </div>
                                 {/* <div className="ko text-gray-600 fs-6">
                                     남광전기는 50년 이상된 clutch, brake 기술의 풍부한 경험과 노하우를 바탕으로 친환경에너지 전문기업으로 나가기 위해 노력하겠습니다.

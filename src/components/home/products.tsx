@@ -19,6 +19,10 @@ const Section = styled.section`
     & .accordion-header{background-color: transparent !important;}
     & .accordion-button{background-color: transparent !important; box-shadow: none !important;}
     & .accordion-body{background-color: transparent !important;}
+
+    & .acc-btn::after{content: none;}
+    & .acc-btn span{transform: rotate(180deg); transition: transform: 0.2s;}
+    & .acc-btn.collapsed span{transform: rotate(0);}
 `;
 
 const Thumbs = styled.div``;
@@ -38,38 +42,53 @@ export default function Products() {
                     <Accordion className="col-12 col-md-7" defaultActiveKey="0">
                         <div className="justify-content-md-between mb-5">
                             <Heading labelTxt={"Product"} titTxt1={`We are the company specialized in`} titTxt2={" electric cluth and brake"} txtAlign={"left"}/>
-                            <DefaultButton content={"Explorer"} type={"to"} theme={"light"} to={"/company/about"} />
+                            <DefaultButton content={"Explorer"} type={"to"} theme={"light"} to={"/product/clutchBrake"} />
                         </div>
                         <AccordionItem onClick={handleAccordion} data-idx="0" eventKey="0" className="border-0 rounded-0 border-bottom border-top">
-                            <AccordionButton className="text-white py-2 px-0 fw-bold">MAGNETIC CLUTCH & BRAKE</AccordionButton>
+                            <AccordionButton className="text-white py-2 px-0 fw-bold acc-btn">
+                                <div className="w-100">MAGNETIC CLUTCH & BRAKE</div>
+                                <span className="material-symbols-outlined">expand_more</span>
+                            </AccordionButton>
                             <AccordionBody className="p-0 py-3">
                                 <div className="text-white mb-3">동해물과 백둣나이 마르고 닳도록 하는님이 보우하사 우리나라 만세</div>
                                 <div className="d-md-none"><ThumbElectroMagneticBrake /></div>
                             </AccordionBody>
                         </AccordionItem>
                         <AccordionItem onClick={handleAccordion} data-idx="1" eventKey="1" className="border-0 rounded-0 border-bottom">
-                            <AccordionButton className="text-white py-2 px-0 fw-bold">ELECTRO MAGNETIC BRAKE</AccordionButton>
+                            <AccordionButton className="text-white py-2 px-0 fw-bold acc-btn">
+                                <div className="w-100">ELECTRO MAGNETIC BRAKE</div>
+                                <span className="material-symbols-outlined">expand_more</span>
+                            </AccordionButton>
                             <AccordionBody className="p-0 py-3">
                                 <div className="text-white mb-3">동해물과 백둣나이 마르고 닳도록 하는님이 보우하사 우리나라 만세</div>
                                 <div className="d-md-none"><ThumbElectroMagneticBrake /></div>
                             </AccordionBody>
                         </AccordionItem>
                         <AccordionItem onClick={handleAccordion} data-idx="2" eventKey="2" className="border-0 rounded-0 border-bottom">
-                            <AccordionButton className="text-white py-2 px-0 fw-bold">ELECTRO MAGNETIC CLUTCH</AccordionButton>
+                            <AccordionButton className="text-white py-2 px-0 fw-bold acc-btn">
+                                <div className="w-100">ELECTRO MAGNETIC CLUTCH</div>
+                                <span className="material-symbols-outlined">expand_more</span>
+                            </AccordionButton>
                             <AccordionBody className="p-0 py-3">
                                 <div className="text-white mb-3">동해물과 백둣나이 마르고 닳도록 하는님이 보우하사 우리나라 만세</div>
                                 <div className="d-md-none"><ThumbElectroMagneticClutch /></div>
                             </AccordionBody>
                         </AccordionItem>
                         <AccordionItem onClick={handleAccordion} data-idx="3" eventKey="3" className="border-0 rounded-0 border-bottom">
-                            <AccordionButton className="text-white py-2 px-0 fw-bold">DISC BRAKE</AccordionButton>
+                            <AccordionButton className="text-white py-2 px-0 fw-bold acc-btn">
+                                <div className="w-100">DISC BRAKE</div>
+                                <span className="material-symbols-outlined">expand_more</span>
+                            </AccordionButton>
                             <AccordionBody className="p-0 py-3">
                                 <div className="text-white mb-3">동해물과 백둣나이 마르고 닳도록 하는님이 보우하사 우리나라 만세</div>
                                 <div className="d-md-none"><ThumbDiscBrake /></div>
                             </AccordionBody>
                         </AccordionItem>
                         <AccordionItem onClick={handleAccordion} data-idx="4" eventKey="4" className="border-0 rounded-0 border-bottom">
-                            <AccordionButton className="text-white py-2 px-0 fw-bold">WIND POWER</AccordionButton>
+                            <AccordionButton className="text-white py-2 px-0 fw-bold acc-btn">
+                                <div className="w-100">WIND POWER</div>
+                                <span className="material-symbols-outlined">expand_more</span>
+                            </AccordionButton>
                             <AccordionBody className="p-0 py-3">
                                 <div className="text-white mb-3">동해물과 백둣나이 마르고 닳도록 하는님이 보우하사 우리나라 만세</div>
                                 <div className="d-md-none"><ThumbWindPower /></div>

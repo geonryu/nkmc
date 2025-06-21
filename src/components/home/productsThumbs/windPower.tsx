@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 export default function ThumbWindPower() {
     return(
         <div className="h-100">
